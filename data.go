@@ -8,7 +8,6 @@ https://www.ncbi.nlm.nih.gov/pmc/tools/id-converter-api/
 package pubmed
 
 import (
-	"encoding/xml"
 	"net/http"
 	"net/url"
 )
@@ -57,7 +56,7 @@ type EfetchPmArticle struct {
 }
 
 type EfetchPubmedXmlResponse struct {
-	XMLName  xml.Name          `xml:"PubmedArticleSet"`
+	//XMLName  xml.Name          `xml:"PubmedArticleSet"`
 	Articles []EfetchPmArticle `xml:"PubmedArticle"`
 }
 

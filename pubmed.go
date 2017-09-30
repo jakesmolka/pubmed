@@ -97,7 +97,7 @@ func (c *Client) Efetch(id, db, rettype, retmode string) (response interface{}, 
 		// @xml - decode with struct
 		if db == "pubmed" {
 			response = new(EfetchPubmedXmlResponse)
-		} else if db == "pmc" {
+		} else if db == "pmc" { // TODO: pmc has default "xml" so retmode="" possible. And rettype is ignored.
 			response = new(EfetchPmcXmlResponse)
 		}
 		err = xml.NewDecoder(body).Decode(&response)

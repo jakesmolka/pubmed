@@ -111,6 +111,8 @@ mechanism for heme-flavin interaction.
 PMID: 9997  [Indexed for MEDLINE]
 
 `, false},
+		{"pubmed, abstract, xml", args{"9997", "pubmed", "abstract", "xml"}, &EfetchPubmedXmlResponse{[]EfetchPmArticle{{"Magnetic studies of Chromatium flavocytochrome C552. A mechanism for heme-flavin interaction.", "Electron paramagnetic resonance and magnetic susceptibility studies of Chromatium flavocytochrome C552 and its diheme flavin-free subunit at temperatures below 45 degrees K are reported. The results show that in the intact protein and the subunit the two low-spin (S = 1/2) heme irons are distinguishable, giving rise to separate EPR signals. In the intact protein only, one of the heme irons exists in two different low spin environments in the pH range 5.5 to 10.5, while the other remains in a constant environment. Factors influencing the variable heme iron environment also influence flavin reactivity, indicating the existence of a mechanism for heme-flavin interaction.", []EfetchPmAuthor{{"Strekas", "T C", "TC"}}, "1976", "Sep", "28"}}}, false},
+		//TODO: add case pmc, nil (ignored), xml (which is default). But has huge response!
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
