@@ -55,7 +55,7 @@ func TestClient_Esearch(t *testing.T) {
 		wantErr      bool
 	}{
 		// TODO: Add test cases.
-		{"cancer and retmax 1", args{"cancer&retmax=1"}, []string{"28958124"}, false},
+		{"cancer and retmax 1", args{"cancer&retmax=1&mindate=2017/09/28&maxdate=2017/09/29"}, []string{"28958124"}, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -69,7 +69,7 @@ func TestClient_Esearch(t *testing.T) {
 				return
 			}
 			if !reflect.DeepEqual(gotResponse.Result.IdList, tt.wantResponse) {
-				t.Errorf("Client.Esearch() = %v, want %v", gotResponse, tt.wantResponse)
+				t.Errorf("Client.Esearch() = %v, want %v", gotResponse.Result.IdList, tt.wantResponse)
 			}
 		})
 	}
