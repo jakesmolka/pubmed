@@ -11,7 +11,6 @@ import (
 	"errors"
 	"io"
 	"io/ioutil"
-	"log"
 	"net/http"
 	"net/url"
 )
@@ -139,7 +138,6 @@ func (c *Client) IDConvert(id string) (pmid, pmcid string, err error) {
 
 // httpGet is foundation to more specific API functions
 func httpGet(requestURL *url.URL, httpClient *http.Client) (io.ReadCloser, error) {
-	log.Printf("http get: %v", requestURL.String())
 	req, err := http.NewRequest("GET", requestURL.String(), nil)
 	if err != nil {
 		return nil, err
